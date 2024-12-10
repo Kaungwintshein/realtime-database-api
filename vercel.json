@@ -3,7 +3,10 @@
   "builds": [
     {
       "src": "dist/main.js",
-      "use": "@vercel/node"
+      "use": "@vercel/node",
+      "config": {
+        "includeFiles": ["dist/**"]
+      }
     }
   ],
   "routes": [
@@ -12,5 +15,10 @@
       "dest": "dist/main.js",
       "methods": ["GET", "POST", "PUT", "PATCH", "DELETE", "HEAD", "OPTIONS"]
     }
-  ]
+  ],
+  "build": {
+    "env": {
+      "PRISMA_GENERATE": "npx prisma generate"
+    }
+  }
 }
