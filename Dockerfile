@@ -11,6 +11,10 @@ RUN npm install
 # Copy Prisma schema and other necessary files
 COPY prisma ./prisma
 
+# Set environment variable for Prisma
+ARG DATABASE_URL
+ENV DATABASE_URL=${DATABASE_URL}
+
 # Generate Prisma client
 RUN npx prisma generate
 
