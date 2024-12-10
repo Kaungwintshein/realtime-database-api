@@ -11,7 +11,7 @@
   ],
   "scripts": {
     "vercel-build": "npx prisma generate && npx prisma migrate deploy && nest build",
-    "postinstall": "prisma generate",
+    "postinstall": "npx prisma generate",
     "build": "npx prisma generate && npx prisma migrate dev && nest build",
     "format": "prettier --write \"src/**/*.ts\" \"test/**/*.ts\"",
     "start": "node dist/main",
