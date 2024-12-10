@@ -7,8 +7,16 @@ WORKDIR /usr/src/app
 # Install app dependencies.
 COPY package*.json ./
 RUN npm install
+
+# Copy Prisma schema and other necessary files
+COPY prisma ./prisma
+
+# Generate Prisma client
 RUN npx prisma generate
-RUN npx prisma migrate dev
+
+# Apply Prisma migrations
+RUN npx prisma migrate dev --name init
+
 # Copy app source code.
 COPY . .
 
