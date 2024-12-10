@@ -1,10 +1,8 @@
 {
   "version": 2,
   "builds": [
-    {
-      "src": "dist/main.js",
-      "use": "@vercel/node"
-    }
+    { "src": "dist/main.js", "use": "@vercel/node" },
+    { "src": "prisma/schema.prisma", "use": "@vercel/static-build" }
   ],
   "routes": [
     {
