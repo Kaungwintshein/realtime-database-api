@@ -27,5 +27,5 @@ COPY . .
 # Expose the port the app runs on.
 EXPOSE 3000
 
-# Run the app.
-CMD ["npm", "start", "--", "--host", "0.0.0.0"]
+# Run the app
+CMD ["npm", "start"]
